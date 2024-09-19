@@ -1,0 +1,17 @@
+	section .data
+	msg db 'Hello World'  ; The msg which we have to print
+	len equ $-msg           
+
+	section .text
+	global _start
+	_start:
+
+	mov eax , 4         ; sys call
+	mov ebx , 1         ; 1 for msg to print on monitor
+	mov ecx , msg        
+	mov edx , len	    ; how much we have to print the msg
+	int 80h            ; interupt 
+
+	mov eax , 1        ; exit from kernel
+	mov ebx , 0
+	int 80h
