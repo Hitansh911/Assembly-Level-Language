@@ -1,0 +1,20 @@
+To run this codes in ubuntu : 
+  1) In ubuntu system , NASM should be installed if not put this commands - 
+sudo apt -get update 
+and then 
+sudo apt -y install nasm
+  2) save the text file with .asm extension  
+  3) open the file location in ubuntu using cd command
+  4) Then write these stataments 
+-- nasm -f elf -o filename.o filename.asm         (This command is use to create object file)
+-- ld -m elf_i386 -o filename filename.o          (This command is use to linking or to create executable file)
+-- ./filename                                     (This command is to run the file
+
+if you are intrested how this all codes works then gdb - general debugger commands are 
+-- gdb filename
+-- layout asm
+-- layout regs
+-- set disassembly-flavor inetl
+-- break _start
+-- run 
+-- ni
